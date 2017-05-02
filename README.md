@@ -1,12 +1,11 @@
 # multi-token
 Multi token for django rest framework
-Settings File
 
-INSTALLED_APPS = [
-  ...
-    'tokens',
-  ...
-]
+Settings File
+-------------
+
+INSTALLED_APPS = ['tokens']
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
