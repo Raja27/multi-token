@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: django-multi-token
+Version: 0.1.2
+Summary: Multi token for django rest framework
+Home-page: https://github.com/Raja27/multi-token.git
+Author: MRP DevShort
+Author-email: mrppythondev@gmail.com
+License: MIT
+Description: # multi-token
+        Multi token for django rest framework
+        
+        Settings File
+        -------------
+        
+        INSTALLED_APPS = ['tokens']
+        
+        
+        REST_FRAMEWORK = {
+            'DEFAULT_AUTHENTICATION_CLASSES': (
+                # 'rest_framework.authentication.TokenAuthentication',
+                'tokens.models.MultiTokenAuthentication',
+            )
+        }
+        
+Keywords: django multi token,token,dajngo rest framework multi token
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5

@@ -1,6 +1,10 @@
 # multi-token
 Multi token for django rest framework
 
+Installation
+------------
+pip install django-multi-token
+
 Settings File
 -------------
 
