@@ -1,19 +1,22 @@
-# multi-token
-Multi token for django rest framework
+# Multi token for django rest framework
 
-Installation
-------------
+##Installation
+##------------
 pip install django-multi-token
 
-Settings File
--------------
+##Settings File
+##-------------
 
-INSTALLED_APPS = ['tokens']
+INSTALLED_APPS = [
+    ...
+    'tokens'
+    ...
+]
 
 
-REST_FRAMEWORK = {
+```REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.authentication.TokenAuthentication',
         'tokens.models.MultiTokenAuthentication',
     )
-}
+}```
