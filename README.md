@@ -1,5 +1,6 @@
 # Multi token for django rest framework
-
+> Using this app user can maintain seperate auth token for each device. Logout form one device will not logout other device.
+So multiple login is possiable using this app.
 ## Installation
 ```pip install django-multi-token```
 
