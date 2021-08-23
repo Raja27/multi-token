@@ -1,2 +1,8 @@
 *.egg-info*
 .idea/*
+build
+dist
+django_multi_token.egg-info
+build/*
+dist/*
+django_multi_token.egg-info/*

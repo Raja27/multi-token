@@ -14,8 +14,10 @@ class MultiToken(models.Model):
 
     key = models.CharField(_("Key"), max_length=40, primary_key=True)
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name='custom_auth_token',
-        on_delete=models.CASCADE, verbose_name=_("User")
+        settings.AUTH_USER_MODEL,
+        related_name="custom_auth_token",
+        on_delete=models.CASCADE,
+        verbose_name=_("User"),
     )
     created = models.DateTimeField(_("Created"), auto_now_add=True)
 
@@ -44,4 +46,3 @@ class MultiToken(models.Model):
 class MultiTokenAuthentication(TokenAuthentication):
 
     model = MultiToken
-
