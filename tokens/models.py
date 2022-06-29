@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
 from rest_framework.authentication import TokenAuthentication
@@ -12,14 +11,14 @@ class MultiToken(models.Model):
     The default authorization token model.
     """
 
-    key = models.CharField(_("Key"), max_length=40, primary_key=True)
+    key = models.CharField("Key", max_length=40, primary_key=True)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name="custom_auth_token",
         on_delete=models.CASCADE,
-        verbose_name=_("User"),
+        verbose_name="User",
     )
-    created = models.DateTimeField(_("Created"), auto_now_add=True)
+    created = models.DateTimeField("Created", auto_now_add=True)
 
     class Meta:
         # Work around for a bug in Django:
@@ -28,8 +27,9 @@ class MultiToken(models.Model):
         # Also see corresponding ticket:
         # https://github.com/tomchristie/django-rest-framework/issues/705
         # abstract = 'rest_framework.authtoken' not in settings.INSTALLED_APPS
-        verbose_name = _("Multi Token")
-        verbose_name_plural = _("Multi Tokens")
+        verbose_name = "Multi Token"
+        verbose_name_plural = "Multi Tokens"
+        ordering = ("-created",)
 
     def save(self, *args, **kwargs):
         if not self.key:
