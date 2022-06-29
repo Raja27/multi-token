@@ -10,6 +10,9 @@ class DynamicColumnAdmin(admin.ModelAdmin):
         field_list = [i.name for i in self.model._meta.fields]
         self.list_display = field_list
         self.list_display_links = field_list
+        self.search_fields = ("user__username",)
+        self.raw_id_fields = ("user",)
+        self.date_hierarchy = "created"
 
 
 my_app = apps.get_app_config("tokens")
